@@ -132,7 +132,7 @@ En el **API Gateway**, simplemente selecciona la definición correspondiente al 
 ### Acceso a los Servicios
 
 - **API Gateway**: `http://localhost:5000`
-    - **PaymentService**: `http://localhost:5000/payments`
+    - **PaymentService**: `http://localhost:5000/payment`
     - **LoginService**: `http://localhost:5000/login`
 
 - **PaymentService**: Directamente en `http://localhost:8080`
