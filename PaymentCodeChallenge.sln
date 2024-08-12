@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService", "PaymentService\PaymentService.csproj", "{CC01CD1D-87FD-4AEA-B8A7-F835E2C9D432}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{75FCA042-FE34-4B3F-8040-75E9CCC43F79}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginService", "LoginService\LoginService.csproj", "{B75CDB88-47DC-49D3-8370-ED790E185DEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{39C77F26-99FF-4F95-932C-6930B0143691}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC01CD1D-87FD-4AEA-B8A7-F835E2C9D432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC01CD1D-87FD-4AEA-B8A7-F835E2C9D432}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC01CD1D-87FD-4AEA-B8A7-F835E2C9D432}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC01CD1D-87FD-4AEA-B8A7-F835E2C9D432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B75CDB88-47DC-49D3-8370-ED790E185DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75CDB88-47DC-49D3-8370-ED790E185DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75CDB88-47DC-49D3-8370-ED790E185DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75CDB88-47DC-49D3-8370-ED790E185DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39C77F26-99FF-4F95-932C-6930B0143691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39C77F26-99FF-4F95-932C-6930B0143691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39C77F26-99FF-4F95-932C-6930B0143691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39C77F26-99FF-4F95-932C-6930B0143691}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,68 @@
+﻿networks:
+  services:
+    driver: bridge
+  database:
+    driver: bridge
+
+services:
+  paymentservice:
+    container_name: paymentservice
+    image: paymentservice
+    build:
+      context: .
+      dockerfile: PaymentService/Dockerfile
+    ports:
+      - "8080:5000"
+    depends_on:
+      dbpayment:
+        condition: service_healthy
+    networks:
+      - services
+      - database
+  
+  dbpayment:
+    container_name: dbpayment
+    build:
+      context: .
+      dockerfile: Database/Dockerfile
+    environment:
+      SA_PASSWORD: "Password123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    healthcheck:
+        test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Password123 -Q 'SELECT 1'"]
+        interval: 10s
+        retries: 5
+        start_period: 40s
+    networks:
+      - database
+        
+  loginservice:
+    container_name: loginservice
+    image: loginservice
+    build:
+      context: .
+      dockerfile: LoginService/Dockerfile
+    ports:
+      - "8081:5002"
+    depends_on:
+      - paymentservice
+    networks:
+      - services
+      - database
+
+
+  apigateway:
+    container_name: apigateway
+    image: apigateway
+    build:
+      context: .
+      dockerfile: ApiGateway/Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - paymentservice
+      - loginservice
+    networks:
+      - services

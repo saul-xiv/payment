@@ -1,0 +1,110 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  apigateway:
+    build:
+      context: "C:\\Users\\Administrator\\Downloads\\PaymentCode\\PaymentCodeChallenge"
+      dockerfile: "ApiGateway/Dockerfile"
+      target: "base"
+      args:
+        BUILD_CONFIGURATION: "Debug"
+    command: []
+    entrypoint:
+    - "/opt/rider-debugger/linux-x64/JetBrains.Debugger.Worker"
+    - "--runtimeconfig"
+    - "/opt/rider-debugger/JetBrains.Debugger.Worker.runtimeconfig.json"
+    - "--mode=server"
+    - "--frontend-port=57100"
+    - "--backend-port=57300"
+    - "--timeout=60"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      RIDER_DEBUGGER_LOG_DIR: "/var/opt/rider-debugger"
+      RESHARPER_LOG_CONF: "/etc/opt/rider-debugger/backend-log.xml"
+    image: "apigateway:dev"
+    ports:
+    - "127.0.0.1:57027:57100"
+    - "127.0.0.1:57227:57300"
+    volumes:
+    - "C:\\Users\\Administrator\\.nuget\\packages:/root/.nuget/packages"
+    - "C:\\Users\\Administrator\\Downloads\\PaymentCode\\PaymentCodeChallenge\\ApiGateway:/app:rw"
+    - "C:\\Users\\Administrator\\Downloads\\PaymentCode\\PaymentCodeChallenge:/src:rw"
+    - "C:\\Users\\Administrator\\AppData\\Local\\JetBrains\\RiderRemoteDebugger\\\
+      2024.1.4\\Linux64:/opt/rider-debugger"
+    - "C:\\Users\\Administrator\\AppData\\Local\\JetBrains\\Installations\\Rider241\\\
+      bin:/etc/opt/rider-debugger/backend-log.xml"
+    - "C:\\Users\\Administrator\\AppData\\Local\\JetBrains\\Rider2024.1\\log\\DebuggerWorker\\\
+      JetBrains.Debugger.Worker.2024_8_12_11_15_49:/var/opt/rider-debugger:rw"
+    working_dir: "/app"
+  loginservice:
+    build:
+      context: "C:\\Users\\Administrator\\Downloads\\PaymentCode\\PaymentCodeChallenge"
+      dockerfile: "LoginService/Dockerfile"
+      target: "base"
+      args:
+        BUILD_CONFIGURATION: "Debug"
+    command: []
+    entrypoint:
+    - "/opt/rider-debugger/linux-x64/JetBrains.Debugger.Worker"
+    - "--runtimeconfig"
+    - "/opt/rider-debugger/JetBrains.Debugger.Worker.runtimeconfig.json"
+    - "--mode=server"
+    - "--frontend-port=57100"
+    - "--backend-port=57300"
+    - "--timeout=60"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      RIDER_DEBUGGER_LOG_DIR: "/var/opt/rider-debugger"
+      RESHARPER_LOG_CONF: "/etc/opt/rider-debugger/backend-log.xml"
+    image: "loginservice:dev"
+    ports:
+    - "127.0.0.1:57028:57100"
+    - "127.0.0.1:57228:57300"
+    volumes:
+    - "C:\\Users\\Administrator\\.nuget\\packages:/home/app/.nuget/packages"
+    - "C:\\Users\\Administrator\\Downloads\\PaymentCode\\PaymentCodeChallenge\\LoginService:/app:rw"
+    - "C:\\Users\\Administrator\\Downloads\\PaymentCode\\PaymentCodeChallenge:/src:rw"
+    - "C:\\Users\\Administrator\\AppData\\Local\\JetBrains\\RiderRemoteDebugger\\\
+      2024.1.4\\Linux64:/opt/rider-debugger"
+    - "C:\\Users\\Administrator\\AppData\\Local\\JetBrains\\Installations\\Rider241\\\
+      bin:/etc/opt/rider-debugger/backend-log.xml"
+    - "C:\\Users\\Administrator\\AppData\\Local\\JetBrains\\Rider2024.1\\log\\DebuggerWorker\\\
+      JetBrains.Debugger.Worker.2024_8_12_11_15_49:/var/opt/rider-debugger:rw"
+    working_dir: "/app"
+  paymentservice:
+    build:
+      context: "C:\\Users\\Administrator\\Downloads\\PaymentCode\\PaymentCodeChallenge"
+      dockerfile: "PaymentService/Dockerfile"
+      target: "base"
+      args:
+        BUILD_CONFIGURATION: "Debug"
+    command: []
+    entrypoint:
+    - "/opt/rider-debugger/linux-x64/JetBrains.Debugger.Worker"
+    - "--runtimeconfig"
+    - "/opt/rider-debugger/JetBrains.Debugger.Worker.runtimeconfig.json"
+    - "--mode=server"
+    - "--frontend-port=57100"
+    - "--backend-port=57300"
+    - "--timeout=60"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      RIDER_DEBUGGER_LOG_DIR: "/var/opt/rider-debugger"
+      RESHARPER_LOG_CONF: "/etc/opt/rider-debugger/backend-log.xml"
+    image: "paymentservice:dev"
+    ports:
+    - "127.0.0.1:57029:57100"
+    - "127.0.0.1:57229:57300"
+    volumes:
+    - "C:\\Users\\Administrator\\.nuget\\packages:/root/.nuget/packages"
+    - "C:\\Users\\Administrator\\Downloads\\PaymentCode\\PaymentCodeChallenge\\PaymentService:/app:rw"
+    - "C:\\Users\\Administrator\\Downloads\\PaymentCode\\PaymentCodeChallenge:/src:rw"
+    - "C:\\Users\\Administrator\\AppData\\Local\\JetBrains\\RiderRemoteDebugger\\\
+      2024.1.4\\Linux64:/opt/rider-debugger"
+    - "C:\\Users\\Administrator\\AppData\\Local\\JetBrains\\Installations\\Rider241\\\
+      bin:/etc/opt/rider-debugger/backend-log.xml"
+    - "C:\\Users\\Administrator\\AppData\\Local\\JetBrains\\Rider2024.1\\log\\DebuggerWorker\\\
+      JetBrains.Debugger.Worker.2024_8_12_11_15_49:/var/opt/rider-debugger:rw"
+    working_dir: "/app"
